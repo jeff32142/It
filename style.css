@@ -1,0 +1,266 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Background Orbs */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: -1;
+    animation: float 8s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 400px;
+    height: 400px;
+    background: #9333ea;
+    top: -100px;
+    left: -100px;
+}
+
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: #2563eb;
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 2s;
+}
+
+.orb-3 {
+    width: 250px;
+    height: 250px;
+    background: #ec4899;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -20px) scale(1.1); }
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+/* IMAGE MASKING ANIMATION FOR NAME */
+.name-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.name-mask {
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80') center/cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: backgroundMove 15s ease-in-out infinite;
+    line-height: 1;
+    letter-spacing: -2px;
+    position: relative;
+    z-index: 2;
+}
+
+.name-mask.small {
+    font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.name-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+    color: transparent;
+    line-height: 1;
+    letter-spacing: -2px;
+    z-index: 1;
+}
+
+.name-outline.small {
+    font-size: clamp(2rem, 6vw, 4rem);
+}
+
+@keyframes backgroundMove {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.subtitle {
+    color: #9ca3af;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    max-width: 600px;
+}
+
+.badges {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.badge {
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    font-size: 24px;
+    animation: bounce 2s infinite;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Section Styles */
+section {
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Location Section */
+.location-section {
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map-box {
+    background: linear-gradient(135deg, #1e1b4b, #1e293b);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+}
+
+.map-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.map-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s;
+}
+
+.map-btn.active {
+    background: white;
+    color: black;
+}
+
+.map-area {
+    position: relative;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 30px 

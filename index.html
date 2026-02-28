@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeff Davis R. Fontijon | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">JD.</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#location">Location</a>
+            <a href="#details">Details</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Image Masking Name -->
+    <section class="hero">
+        <div class="name-container">
+            <h1 class="name-mask">JEFF DAVIS</h1>
+            <h1 class="name-outline">JEFF DAVIS</h1>
+        </div>
+        <div class="name-container">
+            <h2 class="name-mask small">R. FONTIJON</h2>
+            <h2 class="name-outline small">R. FONTIJON</h2>
+        </div>
+        <p class="subtitle">Computer Engineering Student • Creative Technologist • Dreamer</p>
+        <div class="badges">
+            <span class="badge">19 Years Old</span>
+            <span class="badge">Antipolo City</span>
+        </div>
+        <div class="scroll-down">↓</div>
+    </section>
+
+    <!-- Location Map Section -->
+    <section id="location" class="location-section">
+        <h2 class="section-title">Current <span>Location</span></h2>
+        
+        <div class="location-grid">
+            <!-- Map -->
+            <div class="map-box">
+                <div class="map-controls">
+                    <button class="map-btn active" onclick="setMapType('satellite')">Satellite</button>
+                    <button class="map-btn" onclick="setMapType('terrain')">Terrain</button>
+                </div>
+                
+                <div class="map-area">
+                    <div class="grid-lines"></div>
+                    <div class="location-marker" onclick="toggleDetails()">
+                        <div class="pulse-ring"></div>
+                        <div class="pulse-ring delay"></div>
+                        <div class="pin">📍</div>
+                    </div>
+                    <div class="coordinates">
+                        14.6255° N, 121.1245° E<br>
+                        <strong>Lores Country Homes</strong>
+                    </div>
+                    <div class="zoom-controls">
+                        <button onclick="zoomIn()">+</button>
+                        <button onclick="zoomOut()">-</button>
+                    </div>
+                </div>
+                
+                <div id="location-popup" class="location-popup hidden">
+                    <div class="popup-content">
+                        <div class="popup-icon">🏠</div>
+                        <div>
+                            <h3>Lores Country Homes</h3>
+                            <p>Schilling St., Antipolo City</p>
+                            <small>Residence • Since 2005</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <h3>Address</h3>
+                    <p>Lores Country Homes, Schilling Street, Antipolo City, Rizal</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📍</div>
+                    <h3>Birthplace</h3>
+                    <p>Born in Antipolo City, Rizal on October 25, 2005</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎂</div>
+                    <h3>Birthday</h3>
+                    <p>October 25, 2005 • Currently 19 years old</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Details -->
+    <section id="details" class="details-section">
+        <h2 class="section-title">Personal <span>Profile</span></h2>
+        
+        <div class="details-grid">
+            <div class="detail-card">
+                <div class="detail-icon">🎯</div>
+                <h3>Motto in Life</h3>
+                <p class="highlight">Dream big, work hard, stay humble</p>
+                <small>My guiding philosophy</small>
+            </div>
+            
+            <div class="detail-card">
+                <div class="detail-icon">🎮</div>
+                <h3>Hobbies</h3>
+                <p class="highlight">Basketball, Anime, Movies, Video Games</p>
+                <small>How I unwind and find inspiration</small>
+            </div>
+            
+            <div class="detail-card">
+                <div class="detail-icon">🎨</div>
+                <h3>Talents</h3>
+                <p class="highlight">Drawing, Swimming</p>
+                <small>Creative expression & physical discipline</small>
+      
